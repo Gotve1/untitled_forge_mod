@@ -1,0 +1,9 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="untitled_forge_mod"
+version="1.0"
+displayName="Example Mod"
+description="A simple mod that adds one item."
