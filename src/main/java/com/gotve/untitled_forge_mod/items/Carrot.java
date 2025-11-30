@@ -7,21 +7,33 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.ScreenEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.lwjgl.glfw.GLFW;
 
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Stack;
+
 import static com.gotve.untitled_forge_mod.UntitledForgeMod.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = UntitledForgeMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class Carrot {
+public class Carrot extends Item {
 
     private static ItemStack hoveredItem = ItemStack.EMPTY;
+
+    public Carrot(Properties properties) {
+        super(properties);
+    }
 
     @SubscribeEvent
     public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
@@ -37,6 +49,7 @@ public class Carrot {
 
     @SubscribeEvent
     public static void onRenderScreen(ScreenEvent.Render.Post event) {
+
         Screen screen = event.getScreen();
 
         if (screen instanceof AbstractContainerScreen<?> container) {
@@ -51,6 +64,7 @@ public class Carrot {
 
     @SubscribeEvent
     public static void onKeyPress(InputEvent.Key event) {
+
         if (event.getAction() != GLFW.GLFW_PRESS)
             return;
 
@@ -61,13 +75,26 @@ public class Carrot {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
                     player.sendSystemMessage(
-                            Component.literal(
-                                    """
-                                    "W" was pressed
-                                    """)
+                            Component.literal("'W' was pressed")
                     );
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onItemTooltip(ItemTooltipEvent event) {
+
+        ItemStack stack = event.getItemStack();
+
+        if (!stack.is(Items.CARROT)) return;
+
+        List<Component> tooltip = event.getToolTip();
+
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Component.literal("This is description of carrot"));
+        } else {
+            tooltip.add(Component.literal("Press [Shift] for description"));
         }
     }
 }
