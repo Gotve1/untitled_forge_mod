@@ -94,7 +94,7 @@ public class Carrot extends Item {
         if (Screen.hasShiftDown()) {
             tooltip.add(Component.literal("This is description of carrot"));
         } else {
-            tooltip.add(Component.literal("Press [Shift] for description"));
+            tooltip.add(Component.literal("Hold [Shift] for description"));
         }
     }
 }

@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -22,6 +23,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.YELLOW_SWORD.get());
                         output.accept(ModItems.ANIMATED_BALL.get());
                         output.accept(ModItems.CUSTOM_MODEL_ITEM.get());
+                        output.accept(Items.CARROT);
                     })
                     .build()
             );
