@@ -13,7 +13,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import javax.annotation.Nullable;
 import java.util.List;
 
-
 public class YellowSword extends SwordItem {
 
     public YellowSword(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
@@ -30,7 +29,7 @@ public class YellowSword extends SwordItem {
         return false; // disable digging
     }
 
-    @Override
+    @Override // use appendHoverText() only if needed static tooltips without animations
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         //tooltip.add(Component.literal("This is yellow sword"));
 

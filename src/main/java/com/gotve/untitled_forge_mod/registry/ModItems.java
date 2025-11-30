@@ -1,5 +1,7 @@
 package com.gotve.untitled_forge_mod.registry;
 
+import com.gotve.untitled_forge_mod.items.AnimatedBall;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.core.registries.Registries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -10,8 +12,23 @@ import com.gotve.untitled_forge_mod.modtiers.ModTiers;
 import com.gotve.untitled_forge_mod.items.YellowSword;
 
 public class ModItems {
+
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(Registries.ITEM, UntitledForgeMod.MOD_ID);
+
+    public static final RegistryObject<Item> ANIMATED_BALL = ITEMS.register("animated_ball", () ->
+            new AnimatedBall(
+                    new Item.Properties()
+            )
+    );
+
+    public static final RegistryObject<Item> CUSTOM_MODEL_ITEM = ITEMS.register("custom_model_item", () ->
+            new Item(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> DEBUG_BLOCK_ITEM = ITEMS.register("debug_block", () ->
+            new BlockItem(ModBlocks.DEBUG_BLOCK.get(), new Item.Properties())
+    );
 
     public static final RegistryObject<Item> YELLOW_SWORD = ITEMS.register("yellow_sword", () ->
             new YellowSword(
@@ -20,14 +37,6 @@ public class ModItems {
                     1.0f,
                     new Item.Properties()
             )
-    );
-
-    public static final RegistryObject<Item> ANIMATED_BALL = ITEMS.register("animated_ball", () ->
-            new Item(new Item.Properties())
-    );
-
-    public static final RegistryObject<Item> CUSTOM_MODEL_ITEM = ITEMS.register("custom_model_item", () ->
-            new Item(new Item.Properties())
     );
 
     @SuppressWarnings("removal") // is used to ignore warnings

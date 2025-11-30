@@ -5,7 +5,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -20,10 +19,11 @@ public class ModCreativeTabs {
                     .icon(() -> new ItemStack(ModItems.YELLOW_SWORD.get()))
                     .displayItems((params, output) -> {
                         // Items that appear inside your tab
-                        output.accept(ModItems.YELLOW_SWORD.get());
                         output.accept(ModItems.ANIMATED_BALL.get());
+                        output.accept(net.minecraft.world.item.Items.CARROT);
                         output.accept(ModItems.CUSTOM_MODEL_ITEM.get());
-                        output.accept(Items.CARROT);
+                        output.accept(ModItems.DEBUG_BLOCK_ITEM.get());
+                        output.accept(ModItems.YELLOW_SWORD.get());
                     })
                     .build()
             );

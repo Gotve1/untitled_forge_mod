@@ -64,19 +64,18 @@ public class Carrot extends Item {
 
         if (event.getKey() == GLFW.GLFW_KEY_W) {
 
-            if (!hoveredItem.isEmpty()) {
+            if (!hoveredItem.is(Items.CARROT)) return;
 
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
-                    player.sendSystemMessage(
-                            Component.literal("'W' was pressed")
-                    );
-                }
+            Player player = Minecraft.getInstance().player;
+            if (player != null) {
+                player.sendSystemMessage(
+                        Component.literal("'W' was pressed")
+                );
             }
         }
     }
 
-    @SubscribeEvent
+    @SubscribeEvent // use ItemTooltipEvent only if needed dynamic descriptions e.g animations in descriptions
     public static void onItemTooltip(ItemTooltipEvent event) {
 
         ItemStack stack = event.getItemStack();
@@ -86,7 +85,7 @@ public class Carrot extends Item {
         List<Component> tooltip = event.getToolTip();
 
         if (Screen.hasShiftDown()) {
-            tooltip.add(Component.literal("This is description of carrot"));
+            tooltip.add(Component.literal("Press [W] to see a message"));
         } else {
             tooltip.add(Component.literal("Hold [Shift] for description"));
         }
