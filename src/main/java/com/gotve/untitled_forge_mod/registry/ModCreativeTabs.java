@@ -21,8 +21,7 @@ public class ModCreativeTabs {
                         // Items that appear inside your tab
                         output.accept(ModItems.ANIMATED_BALL.get());
                         output.accept(net.minecraft.world.item.Items.CARROT);
-                        output.accept(ModItems.CUSTOM_MODEL_ITEM.get());
-                        output.accept(ModItems.DEBUG_BLOCK_ITEM.get());
+                        output.accept(ModItems.OAK_TABLE_ITEM.get());
                         output.accept(ModItems.YELLOW_SWORD.get());
                     })
                     .build()

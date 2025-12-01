@@ -22,12 +22,8 @@ public class ModItems {
             )
     );
 
-    public static final RegistryObject<Item> CUSTOM_MODEL_ITEM = ITEMS.register("custom_model_item", () ->
-            new Item(new Item.Properties())
-    );
-
-    public static final RegistryObject<Item> DEBUG_BLOCK_ITEM = ITEMS.register("debug_block", () ->
-            new BlockItem(ModBlocks.DEBUG_BLOCK.get(), new Item.Properties())
+    public static final RegistryObject<Item> OAK_TABLE_ITEM = ITEMS.register("oak_table_item", () ->
+            new BlockItem(ModBlocks.OAK_TABLE.get(), new Item.Properties())
     );
 
     public static final RegistryObject<Item> YELLOW_SWORD = ITEMS.register("yellow_sword", () ->
