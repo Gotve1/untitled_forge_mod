@@ -1,5 +1,5 @@
 {
-  "variants": {
-    "": { "model": "untitled_forge_mod:block/oak_table" }
-  }
+    "variants": {
+        "": { "model": "untitled_forge_mod:block/oak_table" }
+    }
 }

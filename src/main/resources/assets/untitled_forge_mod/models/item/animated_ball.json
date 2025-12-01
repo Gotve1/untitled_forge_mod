@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "untitled_forge_mod:item/animated_ball_texture"
-  }
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "untitled_forge_mod:item/animated_ball_texture"
+    }
 }

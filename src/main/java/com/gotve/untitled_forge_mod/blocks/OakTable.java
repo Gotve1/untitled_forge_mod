@@ -14,7 +14,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class Table extends Block {
+public class OakTable extends Block {
 
     // shapes generated from oak_table.json
     private static final VoxelShape LEG_RF = Block.box(14, 0, 0, 16, 10, 2);
@@ -32,7 +32,7 @@ public class Table extends Block {
             LEG_RB
     );
 
-    public Table(Properties properties) {
+    public OakTable(Properties properties) {
         super(properties);
     }
 

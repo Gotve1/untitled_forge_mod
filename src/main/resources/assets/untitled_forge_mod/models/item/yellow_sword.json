@@ -1,6 +1,6 @@
 {
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "untitled_forge_mod:item/yellow_sword_texture"
-  }
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "untitled_forge_mod:item/yellow_sword_texture"
+    }
 }

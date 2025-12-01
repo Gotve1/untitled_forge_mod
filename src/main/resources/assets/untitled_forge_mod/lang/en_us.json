@@ -1,5 +1,6 @@
 {
-  "item.untitled_forge_mod.yellow_sword": "Yellow sword",
-  "item.untitled_forge_mod.animated_ball": "Animated ball",
-  "item.untitled_forge_mod.custom_model_item": "Item with custom 3D model"
+    "block.untitled_forge_mod.oak_chair": "Oak chair",
+    "block.untitled_forge_mod.oak_table": "Oak table",
+    "item.untitled_forge_mod.animated_ball": "Animated ball",
+    "item.untitled_forge_mod.yellow_sword": "Yellow sword"
 }

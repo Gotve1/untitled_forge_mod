@@ -26,6 +26,10 @@ public class ModItems {
             new BlockItem(ModBlocks.OAK_TABLE.get(), new Item.Properties())
     );
 
+    public static final RegistryObject<Item> OAK_CHAIR_ITEM = ITEMS.register("oak_chair_item", () ->
+            new BlockItem(ModBlocks.OAK_CHAIR.get(), new Item.Properties())
+    );
+
     public static final RegistryObject<Item> YELLOW_SWORD = ITEMS.register("yellow_sword", () ->
             new YellowSword(
                     ModTiers.YELLOW_TIER,

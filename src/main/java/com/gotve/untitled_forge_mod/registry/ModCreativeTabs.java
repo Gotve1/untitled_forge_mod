@@ -22,6 +22,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.ANIMATED_BALL.get());
                         output.accept(net.minecraft.world.item.Items.CARROT);
                         output.accept(ModItems.OAK_TABLE_ITEM.get());
+                        output.accept(ModItems.OAK_CHAIR_ITEM.get());
                         output.accept(ModItems.YELLOW_SWORD.get());
                     })
                     .build()
