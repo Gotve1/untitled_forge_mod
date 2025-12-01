@@ -44,7 +44,9 @@ public class OakTable extends Block {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
 
-        player.sendSystemMessage(Component.literal("You've knocked on a table"));
+        if (!level.isClientSide) {
+            player.sendSystemMessage(Component.literal("You've knocked on a table"));
+        }
         return InteractionResult.SUCCESS;
     }
 }

@@ -34,10 +34,12 @@ public class Carrot extends Item {
 
         if (event.getEntity() == null) return;
 
-        if (event.getItemStack().is(Items.CARROT)) {
-            event.getEntity().sendSystemMessage(
-                    Component.literal("You have pressed right click.")
-            );
+        if (!event.getLevel().isClientSide()) {
+            if (event.getItemStack().is(Items.CARROT)) {
+                event.getEntity().sendSystemMessage(
+                        Component.literal("You have pressed right click.")
+                );
+            }
         }
     }
 

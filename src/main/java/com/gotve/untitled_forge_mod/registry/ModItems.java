@@ -39,6 +39,10 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<Item> LUCKY_NUMBER_ITEM = ITEMS.register("lucky_number", () ->
+            new BlockItem(ModBlocks.LUCKY_NUMBER.get(), new Item.Properties())
+    );
+
     @SuppressWarnings("removal") // is used to ignore warnings
     public static void register() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());

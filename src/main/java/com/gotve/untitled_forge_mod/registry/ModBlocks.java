@@ -1,6 +1,7 @@
 package com.gotve.untitled_forge_mod.registry;
 
 import com.gotve.untitled_forge_mod.UntitledForgeMod;
+import com.gotve.untitled_forge_mod.blocks.LuckyNumber;
 import com.gotve.untitled_forge_mod.blocks.OakChair;
 import com.gotve.untitled_forge_mod.blocks.OakTable;
 import net.minecraft.core.registries.Registries;
@@ -31,6 +32,12 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(1.5f, 6.0f)
                     .noOcclusion()
+            )
+    );
+
+    public static final RegistryObject<Block> LUCKY_NUMBER = BLOCKS.register("lucky_number", () ->
+            new LuckyNumber(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
             )
     );
 
