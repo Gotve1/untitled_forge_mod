@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -26,11 +27,8 @@ public class OakChair extends Block {
 
     private static final VoxelShape LEG_NW = Block.box(3, 0, 3, 5, 5, 5);
     private static final VoxelShape LEG_NE = Block.box(11, 0, 3, 13, 5, 5);
-    private static final VoxelShape LEG_SW = Block.box(3, 0, 11, 5, 15, 13);
-    private static final VoxelShape LEG_SE = Block.box(11, 0, 11, 13, 15, 13);
-
-    private static final VoxelShape SPINE_1 = Block.box(5, 13, 11, 11, 15, 13);
-    private static final VoxelShape SPINE_2 = Block.box(5, 9, 11, 11, 11, 13);
+    private static final VoxelShape LEG_SW = Block.box(3, 0, 11, 5, 5, 13);
+    private static final VoxelShape LEG_SE = Block.box(11, 0, 11, 13, 5, 13);
 
     private static final VoxelShape SEAT = Block.box(3, 5, 3, 13, 7, 13);
 
@@ -39,8 +37,6 @@ public class OakChair extends Block {
             LEG_NE,
             LEG_SW,
             LEG_SE,
-            SPINE_1,
-            SPINE_2,
             SEAT
     );
 
@@ -48,7 +44,7 @@ public class OakChair extends Block {
 
     public OakChair(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+        //this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
     @Override
@@ -59,6 +55,11 @@ public class OakChair extends Block {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override
