@@ -1,0 +1,20 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "com.gotve.untitled_forge_mod.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "refmap": "untitled_forge_mod.refmap.json",
+
+    "mixins": [
+        "PlayerMixin"
+    ],
+    "client": [
+
+    ],
+    "server": [
+
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

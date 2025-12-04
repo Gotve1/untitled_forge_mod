@@ -2,6 +2,10 @@ modLoader="javafml"
 loaderVersion="[47,)"
 license="MIT"
 
+mixinConfig = [
+    "untitled_forge_mod.mixin.json"
+]
+
 [[mods]]
 modId="untitled_forge_mod"
 version="1.0"
