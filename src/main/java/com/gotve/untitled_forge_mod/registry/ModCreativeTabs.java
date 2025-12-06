@@ -10,20 +10,19 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 public class ModCreativeTabs {
-    public static final DeferredRegister<CreativeModeTab> TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, UntitledForgeMod.MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, UntitledForgeMod.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB =
             TABS.register("example_tab", () -> CreativeModeTab.builder()
                     .title(Component.literal("Example Tab"))
                     .icon(() -> new ItemStack(ModItems.YELLOW_SWORD.get()))
                     .displayItems((params, output) -> {
-                        // Items that appear inside your tab
                         output.accept(ModItems.ANIMATED_BALL.get());
                         output.accept(net.minecraft.world.item.Items.CARROT);
                         output.accept(ModItems.OAK_TABLE_ITEM.get());
                         output.accept(ModItems.OAK_CHAIR_ITEM.get());
                         output.accept(ModItems.YELLOW_SWORD.get());
+                        output.accept(ModItems.LUCKY_NUMBER_ITEM.get());
                     })
                     .build()
             );

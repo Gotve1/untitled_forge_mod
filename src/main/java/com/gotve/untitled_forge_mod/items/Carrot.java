@@ -1,5 +1,6 @@
 package com.gotve.untitled_forge_mod.items;
 
+import com.gotve.untitled_forge_mod.UI.MyCustomScreen;
 import com.gotve.untitled_forge_mod.UntitledForgeMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
@@ -35,7 +36,9 @@ public class Carrot extends Item {
         if (event.getEntity() == null) return;
 
         if (!event.getLevel().isClientSide()) {
+
             if (event.getItemStack().is(Items.CARROT)) {
+
                 event.getEntity().sendSystemMessage(
                         Component.literal("You have pressed right click.")
                 );
@@ -73,6 +76,8 @@ public class Carrot extends Item {
                 player.sendSystemMessage(
                         Component.literal("'W' was pressed")
                 );
+
+                Minecraft.getInstance().setScreen(new MyCustomScreen());
             }
         }
     }
