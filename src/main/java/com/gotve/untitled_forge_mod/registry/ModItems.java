@@ -6,6 +6,7 @@ import com.gotve.untitled_forge_mod.items.YellowSword;
 import com.gotve.untitled_forge_mod.modtiers.ModTiers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -50,7 +51,7 @@ public class ModItems {
     );
 
     @SuppressWarnings("removal") // is used to ignore warnings
-    public static void register() {
-        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    public static void register(IEventBus bus) {
+        ITEMS.register(bus);
     }
 }
