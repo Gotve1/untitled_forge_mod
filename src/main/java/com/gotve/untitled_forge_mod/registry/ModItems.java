@@ -6,6 +6,7 @@ import com.gotve.untitled_forge_mod.items.YellowSword;
 import com.gotve.untitled_forge_mod.modtiers.ModTiers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -50,8 +51,18 @@ public class ModItems {
             )
     );
 
+
+    public static final DeferredRegister<Item> ITEMS_REG =
+            DeferredRegister.create(ForgeRegistries.ITEMS, "minecraft");
+
+    public static final RegistryObject<Item> IRON_SWORD = ITEMS_REG.register("iron_sword",
+            () -> new SwordItem(ModTiers.COPPER_TIER, 3, -2.4f, new Item.Properties()));
+
+
+
     @SuppressWarnings("removal") // is used to ignore warnings
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
+        ITEMS_REG.register(bus);
     }
 }
